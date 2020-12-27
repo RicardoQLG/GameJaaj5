@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  push:
+    branches: [ featured ]
+  pull_request:
+    branches: [ featured ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v1.1.0
+        with:
+          path: ./Library
+          key: Library-GameJaaj5-StandaloneWindows
+          restore-keys: |
+            Library-GameJaaj5-
+            Library-
+            
+      - name: Build project
+        uses: webbertakken/unity-builder@v1.5
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          unityVersion: 2020.1.0f1
+          targetPlatform: StandaloneWindows
+          versioning: Semantic
+
+      - name: Create artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: Build
+          path: build
