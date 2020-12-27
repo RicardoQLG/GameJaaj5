@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour
 
     float distance = Vector3.Distance(transform.position, currentWaypointPosition);
 
-    if (distance <= .1f)
+    if (distance <= .05f)
     {
       transform.position = waypoints[currentWaypointIndex].transform.position;
       currentWaypointIndex++;
