@@ -69,7 +69,7 @@ public class EnemyController : MonoBehaviour
     if (currentHealth <= 0f)
     {
       OnDie.Invoke(transform);
-      DestroyImmediate(gameObject);
+      Destroy(gameObject);
       return;
     }
   }

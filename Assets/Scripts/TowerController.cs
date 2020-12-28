@@ -7,11 +7,12 @@ public class TowerController : MonoBehaviour
   public TowerObject tower;
   public List<Transform> targets;
   public int currentLevel = 0;
+  public bool shooting = false;
+  public GameObject place;
 
   private void Start()
   {
     UpdateTower();
-    StartCoroutine(Shoot());
   }
 
   public void Upgrade()
@@ -33,6 +34,7 @@ public class TowerController : MonoBehaviour
     {
       targets.Add(other.transform);
       other.transform.GetComponent<EnemyController>().OnDie.AddListener(RemoveTarget);
+      if (!shooting) StartCoroutine(Shoot());
     }
   }
 
@@ -44,10 +46,12 @@ public class TowerController : MonoBehaviour
   private void RemoveTarget(Transform target)
   {
     targets.Remove(target);
+    target.GetComponent<EnemyController>().OnDie.RemoveListener(RemoveTarget);
   }
 
   private IEnumerator Shoot()
   {
+    shooting = true;
     while (true)
     {
       if (targets.Count > 0)
@@ -55,6 +59,11 @@ public class TowerController : MonoBehaviour
         targets[0].GetComponent<EnemyController>().TakeDamage(tower.levels[currentLevel].damage);
       }
       yield return new WaitForSeconds(tower.levels[currentLevel].speed);
+      if (targets.Count == 0)
+      {
+        StopCoroutine(Shoot());
+        shooting = false;
+      }
     }
   }
 }

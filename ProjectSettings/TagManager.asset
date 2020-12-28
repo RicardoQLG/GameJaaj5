@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
+  - Placeable
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Enemy
+  - name: Mobs
     uniqueID: 3105044239
+    locked: 0
+  - name: Mouse
+    uniqueID: 990181631
     locked: 0

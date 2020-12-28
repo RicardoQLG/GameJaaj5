@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
   public static GameManager instance;
   [SerializeField] private float currentFunds = 200f;
   public TextMeshProUGUI funds;
+  public GameObject carrying;
 
   private void Awake()
   {
@@ -29,5 +30,10 @@ public class GameManager : MonoBehaviour
   private void UpdateFundCanvas()
   {
     funds.text = $"Fundos R$ {currentFunds.ToString("F2")}";
+  }
+
+  public void ChoseTower(TowerObject tower)
+  {
+    carrying.GetComponent<PlaceableController>().SetTower(tower);
   }
 }
