@@ -37,7 +37,8 @@ public class WaveManager : MonoBehaviour
     do
     {
       GameObject enemy = Instantiate(enemyPrefab, startPosition.position, Quaternion.identity);
-      enemy.GetComponent<EnemyController>().SetName("Sample");
+      string name = NameManager.instance.GetRandomUniqueName();
+      enemy.GetComponent<EnemyController>().SetName(name);
       enemy.GetComponent<EnemyController>().enemyData = waves[currentWaveIndex].enemies[enemyIndex];
       yield return new WaitForSeconds(interval);
     } while (++enemyIndex < waves[currentWaveIndex].enemies.Count);
