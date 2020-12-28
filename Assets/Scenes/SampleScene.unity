@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a628f75e2efd454684862fa0408088d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: -0.75, z: 0}
+  offset: {x: 0, y: 0, z: 0}
   towerPrefab: {fileID: 7657263469976653039, guid: 8a8b9529d38f1c24288ec2e8c2121198, type: 3}
   placeableLayer:
     serializedVersion: 2
