@@ -93,6 +93,7 @@ public class EnemyController : MonoBehaviour
     if (currentHealth <= 0f)
     {
       OnDie.Invoke(transform);
+      GameManager.instance.AddFunds(enemyData.value);
       Destroy(gameObject);
       return;
     }

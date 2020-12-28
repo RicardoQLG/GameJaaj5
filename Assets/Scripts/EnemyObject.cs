@@ -8,4 +8,5 @@ public class EnemyObject : ScriptableObject
   public Sprite sprite;
   public float health = 100f;
   public float speed = .8f;
+  public float value = 0f;
 }

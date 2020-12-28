@@ -1,11 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Tower", menuName = "TowerDefense/Tower", order = 0)]
 public class TowerObject : ScriptableObject
 {
+  public float buyValue = 0f;
   public List<Tower> levels = new List<Tower>();
 }
 
@@ -16,5 +16,4 @@ public class Tower
   public float speed;
   public float damage;
   public float range;
-
 }

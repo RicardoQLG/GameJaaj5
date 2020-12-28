@@ -15,3 +15,4 @@ MonoBehaviour:
   sprite: {fileID: -4684333735789482159, guid: db5e7a72b602bab429b58a9b99d8e017, type: 3}
   health: 100
   speed: 0.8
+  value: 15

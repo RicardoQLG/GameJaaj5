@@ -13,18 +13,13 @@ public class GameManager : MonoBehaviour
   {
     if (instance == null) instance = this;
     if (instance != this) DestroyImmediate(gameObject);
+
     UpdateFundCanvas();
   }
 
   private bool HasFunds(float amout)
   {
     return amout <= currentFunds;
-  }
-
-  public void AddFunds(float amount)
-  {
-    currentFunds += amount;
-    UpdateFundCanvas();
   }
 
   private void UpdateFundCanvas()
@@ -34,6 +29,19 @@ public class GameManager : MonoBehaviour
 
   public void ChoseTower(TowerObject tower)
   {
+    if (tower.buyValue > currentFunds) return;
     carrying.GetComponent<PlaceableController>().SetTower(tower);
+  }
+
+  public void AddFunds(float amount)
+  {
+    currentFunds += amount;
+    UpdateFundCanvas();
+  }
+
+  public void RemoveFunds(float amount)
+  {
+    currentFunds -= amount;
+    UpdateFundCanvas();
   }
 }

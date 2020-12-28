@@ -51,6 +51,7 @@ public class PlaceableController : MonoBehaviour
     GameObject newTower = Instantiate(towerPrefab, targetPlace.position, Quaternion.identity);
     newTower.GetComponent<TowerController>().tower = tower;
     newTower.GetComponent<TowerController>().place = targetPlace.gameObject;
+    GameManager.instance.RemoveFunds(tower.buyValue);
     targetPlace.gameObject.SetActive(false);
   }
 
