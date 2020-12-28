@@ -2555,19 +2555,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a308a5d7b5c68419000424ace9039a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 2
+  interval: 3
   startPosition: {fileID: 2026115414}
   enemyPrefab: {fileID: 4367076741300872889, guid: b7f3210755175cd4f88fa10964b0d9aa, type: 3}
   floor:
   - {fileID: 1353874800}
   - {fileID: 1168885570}
-  variants:
-  - {fileID: 11400000, guid: 8dc0112924d225344a6e8aefe51673ec, type: 2}
-  - {fileID: 11400000, guid: 4ef07c8d013d94d438edd3671262399d, type: 2}
-  deployables:
-  - Ricardo
-  - Ananda
-  - "Amdr\xE9 Young"
   enemies: []
   waves:
   - {fileID: 11400000, guid: 54d200d4e4bbd7f498981496b073c001, type: 2}
@@ -2575,18 +2568,6 @@ MonoBehaviour:
   OnWaveEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 847371902}
-        m_TargetAssemblyTypeName: WaveManager, Assembly-CSharp
-        m_MethodName: Log
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1938751614}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -2602,6 +2583,8 @@ MonoBehaviour:
   OnLastWaveEnd:
     m_PersistentCalls:
       m_Calls: []
+  isProducing: 0
+  waitingNextWave: 1
 --- !u!4 &847371903
 Transform:
   m_ObjectHideFlags: 0
@@ -2629,7 +2612,7 @@ GameObject:
   - component: {fileID: 901245258}
   - component: {fileID: 901245257}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Torre 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5451,7 +5434,7 @@ GameObject:
   - component: {fileID: 1754973717}
   - component: {fileID: 1754973716}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Torre 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
