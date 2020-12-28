@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class EnemyController : MonoBehaviour
 {
   public List<GameObject> waypoints;
   private int currentWaypointIndex = 0;
+  private int currentFloorIndex = 0;
   public EnemyObject enemyData;
   public UnityEvent<Transform> OnDie = new UnityEvent<Transform>();
   public TextMeshProUGUI nameField;
@@ -19,7 +21,7 @@ public class EnemyController : MonoBehaviour
 
   private void Awake()
   {
-    waypoints = WaveManager.instance.waypoints;
+    MoveToFloor(0);
   }
 
   private void OnEnable() => WaveManager.instance.enemies.Add(this);
@@ -27,11 +29,33 @@ public class EnemyController : MonoBehaviour
 
   private void Start()
   {
-    currentWaypointIndex = 0;
     GetComponent<SpriteRenderer>().sprite = enemyData.sprite;
     currentSpeed = enemyData.speed;
     currentHealth = enemyData.health;
+  }
+
+  private void MoveToFirstWaypoint()
+  {
+    currentWaypointIndex = 0;
     transform.position = waypoints[currentWaypointIndex].transform.position;
+  }
+
+  private void MoveToFloor(int floorIndex)
+  {
+    waypoints = WaveManager.instance.floor[floorIndex].waypoints;
+    MoveToFirstWaypoint();
+  }
+
+  private void MoveToNextFloor()
+  {
+    currentFloorIndex++;
+
+    if (currentFloorIndex > WaveManager.instance.floor.Count)
+    {
+      Debug.Log("saindo aqui!");
+    }
+
+    MoveToFloor(currentFloorIndex);
   }
 
   public void SetName(string name)
@@ -41,7 +65,7 @@ public class EnemyController : MonoBehaviour
 
   private void FixedUpdate()
   {
-    if (currentWaypointIndex == waypoints.Count) return;
+    if (currentWaypointIndex == waypoints.Count) MoveToNextFloor();
 
     Vector3 currentWaypointPosition = waypoints[currentWaypointIndex].transform.position;
 

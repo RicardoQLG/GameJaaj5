@@ -10,7 +10,7 @@ public class WaveManager : MonoBehaviour
   public float interval;
   public Transform startPosition;
   public GameObject enemyPrefab;
-  public List<GameObject> waypoints = new List<GameObject>();
+  public List<FloorController> floor;
   public List<EnemyObject> variants;
   public List<string> deployables;
   public List<EnemyController> enemies;
