@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
   private void Awake()
   {
     if (instance == null) instance = this;
-    if (instance != this) DestroyImmediate(this);
+    if (instance != this) DestroyImmediate(gameObject);
     UpdateFundCanvas();
   }
 

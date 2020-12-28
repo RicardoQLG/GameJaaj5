@@ -22,7 +22,11 @@ public class NameManager : MonoBehaviour
   private void Awake()
   {
     if (instance == null) instance = this;
-    if (instance != this) Destroy(this);
+    if (instance != this)
+    {
+      DestroyImmediate(gameObject);
+      return;
+    }
 
     DontDestroyOnLoad(this);
   }
