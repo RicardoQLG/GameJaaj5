@@ -4442,7 +4442,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Torre 1 (R$ 160,00)
 --- !u!222 &1443307782
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5016,7 +5016,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Torre 0 (R$ 150,00)
 --- !u!222 &1597617001
 CanvasRenderer:
   m_ObjectHideFlags: 0
