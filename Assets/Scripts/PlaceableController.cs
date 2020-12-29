@@ -77,9 +77,11 @@ public class PlaceableController : MonoBehaviour
   private void Place(Transform targetPlace, TowerObject tower)
   {
     if (tower == null) return;
+    int order = targetPlace.GetComponent<PlaceAreaController>().orderInLayer;
     GameObject newTower = Instantiate(towerPrefab, targetPlace.position, Quaternion.identity);
     newTower.GetComponent<TowerController>().tower = tower;
     newTower.GetComponent<TowerController>().place = targetPlace.gameObject;
+    newTower.GetComponent<SpriteRenderer>().sortingOrder = order;
     GameManager.instance.RemoveFunds(tower.buyValue);
     targetPlace.gameObject.SetActive(false);
     rangeDisplay.enabled = false;
