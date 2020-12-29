@@ -14,11 +14,6 @@ public class TowerController : MonoBehaviour
   float angle;
   private IEnumerator shootCoroutine;
 
-  private void OnDrawGizmosSelected()
-  {
-    Handles.DrawWireDisc(transform.position, Vector3.forward, tower.levels[currentLevel].range);
-  }
-
   private void Start()
   {
     shootCoroutine = Shoot();
