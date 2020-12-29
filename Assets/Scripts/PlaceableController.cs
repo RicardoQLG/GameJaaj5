@@ -9,15 +9,41 @@ public class PlaceableController : MonoBehaviour
   public Vector3 offset;
   public GameObject towerPrefab;
   public LayerMask placeableLayer;
+  public LineRenderer rangeDisplay;
+
+  private void Awake()
+  {
+    rangeDisplay = GetComponent<LineRenderer>();
+  }
+
+  private void SetupRange(float range)
+  {
+    rangeDisplay.positionCount = 32;
+    float angle = 11.25f;
+    rangeDisplay.useWorldSpace = false;
+
+    for (int segment = 0; segment < rangeDisplay.positionCount; segment++)
+    {
+      float x = Mathf.Sin(Mathf.Deg2Rad * angle * segment) * range;
+      float y = Mathf.Cos(Mathf.Deg2Rad * angle * segment) * range * 0.5f;
+
+      rangeDisplay.SetPosition(segment, new Vector3(x, y, 0));
+    }
+  }
+
   public void SetTower(TowerObject newTower)
   {
     tower = newTower;
     GetComponent<SpriteRenderer>().sprite = newTower.levels[0].sprite;
+    SetupRange(tower.levels[0].range);
   }
+
   public void UnsetTower()
   {
     tower = null;
     GetComponent<SpriteRenderer>().sprite = null;
+    SetupRange(0);
+    rangeDisplay.enabled = false;
   }
 
   private void Update()
@@ -28,6 +54,7 @@ public class PlaceableController : MonoBehaviour
     if (hit.transform != null)
     {
       transform.position = hit.transform.position;
+      rangeDisplay.enabled = true;
     }
 
     if (Input.GetButtonDown("Fire1"))
@@ -43,6 +70,7 @@ public class PlaceableController : MonoBehaviour
       Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
       mousePosition.z = 20f;
       transform.position = mousePosition + offset;
+      rangeDisplay.enabled = false;
     }
   }
 
@@ -54,6 +82,7 @@ public class PlaceableController : MonoBehaviour
     newTower.GetComponent<TowerController>().place = targetPlace.gameObject;
     GameManager.instance.RemoveFunds(tower.buyValue);
     targetPlace.gameObject.SetActive(false);
+    rangeDisplay.enabled = false;
   }
 
   private void OnTriggerEnter2D(Collider2D other)
