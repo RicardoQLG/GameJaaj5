@@ -48,6 +48,7 @@ public class PlaceableController : MonoBehaviour
 
   private void Place(Transform targetPlace, TowerObject tower)
   {
+    if (tower == null) return;
     GameObject newTower = Instantiate(towerPrefab, targetPlace.position, Quaternion.identity);
     newTower.GetComponent<TowerController>().tower = tower;
     newTower.GetComponent<TowerController>().place = targetPlace.gameObject;
