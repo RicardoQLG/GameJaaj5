@@ -12,6 +12,7 @@ public class TowerController : MonoBehaviour
   public GameObject place;
   int segments = 32;
   float angle;
+  private IEnumerator shootCoroutine;
 
   private void OnDrawGizmosSelected()
   {
@@ -20,6 +21,7 @@ public class TowerController : MonoBehaviour
 
   private void Start()
   {
+    shootCoroutine = Shoot();
     angle = 360 / segments;
     UpdateTower();
     OnDeselect();
@@ -71,7 +73,7 @@ public class TowerController : MonoBehaviour
     {
       targets.Add(other.transform);
       other.transform.GetComponent<EnemyController>().OnDie.AddListener(RemoveTarget);
-      if (!shooting) StartCoroutine(Shoot());
+      if (!shooting) StartCoroutine(shootCoroutine);
     }
   }
 
@@ -96,9 +98,10 @@ public class TowerController : MonoBehaviour
         targets[0].GetComponent<EnemyController>().TakeDamage(tower.levels[currentLevel].damage);
       }
       yield return new WaitForSeconds(tower.levels[currentLevel].speed);
+
       if (targets.Count == 0)
       {
-        StopCoroutine(Shoot());
+        StopCoroutine(shootCoroutine);
         shooting = false;
       }
     }
