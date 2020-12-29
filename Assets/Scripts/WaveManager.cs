@@ -53,6 +53,7 @@ public class WaveManager : MonoBehaviour
     {
       OnWaveEnd.Invoke();
       waitingNextWave = true;
+      currentWaveIndex++;
     }
 
     if (currentWaveIndex >= waves.Count)
