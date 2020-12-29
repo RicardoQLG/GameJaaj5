@@ -5697,6 +5697,10 @@ MonoBehaviour:
   currentFunds: 200
   funds: {fileID: 1964484474}
   carrying: {fileID: 356233154}
+  selectedTower: {fileID: 0}
+  towerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!4 &1877212956
 Transform:
   m_ObjectHideFlags: 0

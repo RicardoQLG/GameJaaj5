@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class TowerController : MonoBehaviour
@@ -9,10 +10,32 @@ public class TowerController : MonoBehaviour
   public int currentLevel = 0;
   public bool shooting = false;
   public GameObject place;
+  int segments = 32;
+  float angle;
+
+  private void OnDrawGizmosSelected()
+  {
+    Handles.DrawWireDisc(transform.position, Vector3.forward, tower.levels[currentLevel].range);
+  }
 
   private void Start()
   {
+    angle = 360 / segments;
     UpdateTower();
+    OnDeselect();
+    float range = tower.levels[currentLevel].range;
+
+    LineRenderer line = GetComponent<LineRenderer>();
+    line.positionCount = segments + 1;
+    line.useWorldSpace = false;
+
+    for (int segment = 0; segment < line.positionCount; segment++)
+    {
+      float x = Mathf.Sin(Mathf.Deg2Rad * angle * segment) * range;
+      float y = Mathf.Cos(Mathf.Deg2Rad * angle * segment) * range * 0.5f;
+
+      line.SetPosition(segment, new Vector3(x, y, 0));
+    }
   }
 
   public void Upgrade()
@@ -24,8 +47,22 @@ public class TowerController : MonoBehaviour
   private void UpdateTower()
   {
     GetComponent<SpriteRenderer>().sprite = tower.levels[currentLevel].sprite;
-    GetComponent<CircleCollider2D>().radius = tower.levels[currentLevel].range;
+    // GetComponent<CircleCollider2D>().radius = tower.levels[currentLevel].range;
+    float range = tower.levels[currentLevel].range;
 
+    PolygonCollider2D polygon = GetComponent<PolygonCollider2D>();
+
+    Vector2[] points = new Vector2[segments];
+
+    for (int segment = 0; segment < segments; segment++)
+    {
+      float x = Mathf.Sin(Mathf.Deg2Rad * angle * segment) * range;
+      float y = Mathf.Cos(Mathf.Deg2Rad * angle * segment) * range * 0.5f;
+
+      points[segment] = new Vector2(x, y);
+    }
+
+    polygon.SetPath(0, points);
   }
 
   private void OnTriggerEnter2D(Collider2D other)
@@ -65,5 +102,15 @@ public class TowerController : MonoBehaviour
         shooting = false;
       }
     }
+  }
+
+  public void OnSelect()
+  {
+    GetComponent<LineRenderer>().enabled = true;
+  }
+
+  public void OnDeselect()
+  {
+    GetComponent<LineRenderer>().enabled = false;
   }
 }
