@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb87186f226a50646a7eefc447dc2404, type: 3}
   m_Name: Torre 0
   m_EditorClassIdentifier: 
-  buyValue: 70
+  buyValue: 1
   levels:
-  - sprite: {fileID: 7316229441688303391, guid: 4a2f70d26fcece146b6411e184df2229, type: 3}
-    speed: 1
-    damage: 12
+  - sprite: {fileID: -537749870668139058, guid: db5e7a72b602bab429b58a9b99d8e017, type: 3}
+    speed: 1.5
+    damage: 10
     range: 2
