@@ -2664,6 +2664,11 @@ MonoBehaviour:
   enemies: []
   waves:
   - {fileID: 11400000, guid: 54d200d4e4bbd7f498981496b073c001, type: 2}
+  - {fileID: 11400000, guid: f134b12df1a2e894daf0505db3410eef, type: 2}
+  - {fileID: 11400000, guid: 068414b028acba24b92b400015c2412b, type: 2}
+  - {fileID: 11400000, guid: 35b9bd191c508e840bbe2e79fee87bdc, type: 2}
+  - {fileID: 11400000, guid: 77dcfb9fb9e12fa46b20b4cddeb83721, type: 2}
+  - {fileID: 11400000, guid: f8e7aae9c3f5426419bbdaa6de3e32a0, type: 2}
   currentWaveIndex: 0
   OnWaveEnd:
     m_PersistentCalls:
@@ -2682,7 +2687,19 @@ MonoBehaviour:
         m_CallState: 2
   OnLastWaveEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1938751614}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isProducing: 0
   waitingNextWave: 1
 --- !u!4 &847371903

@@ -16,5 +16,5 @@ MonoBehaviour:
   levels:
   - sprite: {fileID: 7316229441688303391, guid: 4a2f70d26fcece146b6411e184df2229, type: 3}
     speed: 1
-    damage: 2
+    damage: 12
     range: 2
