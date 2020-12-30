@@ -4,52 +4,103 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7223950226953391895
-    second: Entrada_Direita
+    second: Entrance L
   - first:
       213: -8377130690987618698
-    second: Entrada_Esqueda
+    second: Entrance R
   - first:
       213: -4684333735789482159
-    second: Saida_Direita
+    second: Exit L
   - first:
       213: -5062486230716756072
-    second: Saida_Esquerda
+    second: Exit R
   - first:
       213: 4099902767569298868
-    second: Comum
+    second: Ground
   - first:
       213: -6833445872158455971
-    second: Twittch
+    second: Tiles_5
   - first:
       213: -537749870668139058
-    second: Torre 1
+    second: Tiles_6
   - first:
       213: 1561205615984820651
-    second: Torre 2
+    second: Tiles_7
   - first:
       213: 857779327251732012
-    second: placeable
+    second: Placeable
   - first:
       213: 3825752689756085014
-    second: Tiles_9
+    second: Twitch Idle 1
   - first:
       213: 7477827516038983822
-    second: Tiles_10
+    second: Twitch Idle 2
   - first:
       213: 3930821917377472818
-    second: Tiles_11
+    second: Twitch Idle 3
   - first:
       213: -47299315171432025
-    second: Tiles_12
+    second: Twitch Idle 4
   - first:
       213: 9045646400296435942
-    second: Tiles_13
+    second: Twitch Step 1 1
   - first:
       213: -6765242926017629268
-    second: Tiles_14
+    second: Twitch Step 1 2
   - first:
       213: -8637159173488095169
-    second: Tiles_15
+    second: Twitch Step 1 3
+  - first:
+      213: 8933607801220796041
+    second: Twitch Step 1 4
+  - first:
+      213: -8955812619259062215
+    second: Twitch Step 2 1
+  - first:
+      213: 4680653795402065389
+    second: Twitch Step 2 2
+  - first:
+      213: 4753258692078137619
+    second: Twitch Step 2 3
+  - first:
+      213: -7956832237065629149
+    second: Twitch Step 2 4
+  - first:
+      213: -6100061461012067082
+    second: Twitch Idle 1
+  - first:
+      213: -7369953315678303813
+    second: Fifa Idle 2
+  - first:
+      213: -7326330765846486680
+    second: Fifa Idle 2
+  - first:
+      213: 5264979163374914166
+    second: Fifa Idle 2
+  - first:
+      213: -8644279775636323431
+    second: Fifa Step 1 1
+  - first:
+      213: 3841374895227053369
+    second: Fifa Step 1 1
+  - first:
+      213: 2398694386035660818
+    second: Fifa Step 1 1
+  - first:
+      213: 8976018127306389262
+    second: Fifa Step 1 1
+  - first:
+      213: 6930148502292774571
+    second: Fifa Step 2 1
+  - first:
+      213: 4243927867023665446
+    second: Fifa Step 2 1
+  - first:
+      213: 4080561482957604121
+    second: Fifa Step 2 1
+  - first:
+      213: 887565136908663245
+    second: Fifa Step 2 1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +131,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -161,11 +212,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Entrada_Direita
+      name: Entrance L
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 512
         width: 64
         height: 64
       alignment: 9
@@ -182,11 +233,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Entrada_Esqueda
+      name: Entrance R
       rect:
         serializedVersion: 2
         x: 64
-        y: 192
+        y: 512
         width: 64
         height: 64
       alignment: 9
@@ -203,11 +254,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Saida_Direita
+      name: Exit L
       rect:
         serializedVersion: 2
         x: 128
-        y: 192
+        y: 512
         width: 64
         height: 64
       alignment: 9
@@ -224,11 +275,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Saida_Esquerda
+      name: Exit R
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 512
         width: 64
         height: 64
       alignment: 9
@@ -245,11 +296,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comum
+      name: Ground
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 448
         width: 64
         height: 64
       alignment: 9
@@ -266,15 +317,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Twittch
+      name: Tiles_5
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 448
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -287,11 +338,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torre 1
+      name: Tiles_6
       rect:
         serializedVersion: 2
         x: 128
-        y: 128
+        y: 448
         width: 64
         height: 64
       alignment: 9
@@ -308,11 +359,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torre 2
+      name: Tiles_7
       rect:
         serializedVersion: 2
         x: 192
-        y: 128
+        y: 448
         width: 64
         height: 64
       alignment: 9
@@ -329,11 +380,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: placeable
+      name: Placeable
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 384
         width: 64
         height: 64
       alignment: 9
@@ -350,11 +401,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_9
+      name: Twitch Idle 1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 0
+        y: 320
         width: 64
         height: 64
       alignment: 9
@@ -371,11 +422,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_10
+      name: Twitch Idle 2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 64
+        y: 320
         width: 64
         height: 64
       alignment: 9
@@ -392,11 +443,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_11
+      name: Twitch Idle 3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
+        x: 128
+        y: 320
         width: 64
         height: 64
       alignment: 9
@@ -413,11 +464,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_12
+      name: Twitch Idle 4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 192
+        y: 320
         width: 64
         height: 64
       alignment: 9
@@ -434,11 +485,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_13
+      name: Twitch Step 1 1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 0
+        y: 257
         width: 64
         height: 64
       alignment: 9
@@ -455,11 +506,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_14
+      name: Twitch Step 1 2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
+        x: 64
+        y: 256
         width: 64
         height: 64
       alignment: 9
@@ -476,7 +527,364 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_15
+      name: Twitch Step 1 3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f305cbb4e75a22880800000000000000
+      internalID: -8637159173488095169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twitch Step 1 4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e8c6286fc8afb70800000000000000
+      internalID: 8933607801220796041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twitch Step 2 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9385a1a6fdf86b380800000000000000
+      internalID: -8955812619259062215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twitch Step 2 2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de52687e3d505f040800000000000000
+      internalID: 4680653795402065389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twitch Step 2 3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311fadab897f6f140800000000000000
+      internalID: 4753258692078137619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twitch Step 2 4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322935ccc37a39190800000000000000
+      internalID: -7956832237065629149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Idle 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc4354bb6a385ba0800000000000000
+      internalID: -6100061461012067082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Idle 2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb948cfc18aa8b990800000000000000
+      internalID: -7369953315678303813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Idle 3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86164ba2cf4a35a90800000000000000
+      internalID: -7326330765846486680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Idle 4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a8bce67a6f01940800000000000000
+      internalID: 5264979163374914166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Step 1 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9938a1ae759590880800000000000000
+      internalID: -8644279775636323431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Step 1 2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935ac1f5d1e4f4530800000000000000
+      internalID: 3841374895227053369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Step 1 3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2181164d5dfd94120800000000000000
+      internalID: 2398694386035660818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Step 1 4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0770970ee8319c70800000000000000
+      internalID: 8976018127306389262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Step 2 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baebdd76855dc2060800000000000000
+      internalID: 6930148502292774571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Step 2 2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629a356e8e575ea30800000000000000
+      internalID: 4243927867023665446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Step 2 3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91544db8c0111a830800000000000000
+      internalID: 4080561482957604121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fifa Step 2 4
       rect:
         serializedVersion: 2
         x: 192
@@ -490,8 +898,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f305cbb4e75a22880800000000000000
-      internalID: -8637159173488095169
+      spriteID: dc9367c1ac3415c00800000000000000
+      internalID: 887565136908663245
       vertices: []
       indices: 
       edges: []

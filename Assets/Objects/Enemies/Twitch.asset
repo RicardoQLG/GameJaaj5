@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da84640a86919447a1815e9dcf7bae7, type: 3}
   m_Name: Twitch
   m_EditorClassIdentifier: 
-  sprite: {fileID: -6833445872158455971, guid: db5e7a72b602bab429b58a9b99d8e017, type: 3}
+  animation: {fileID: 9100000, guid: cfe1faedf794e924997a298077bb4bba, type: 2}
+  stepSound: {fileID: 8300000, guid: 3564cf90650d8b64ba364d502b701d86, type: 3}
   health: 100
   speed: 1.1
   value: 5

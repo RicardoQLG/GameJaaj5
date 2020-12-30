@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0da84640a86919447a1815e9dcf7bae7, type: 3}
-  m_Name: Subscriber
+  m_Name: Fifa
   m_EditorClassIdentifier: 
-  sprite: {fileID: -4684333735789482159, guid: db5e7a72b602bab429b58a9b99d8e017, type: 3}
+  animation: {fileID: 9100000, guid: eca9f00f0468f7849b509adaf1e5f3d7, type: 2}
+  stepSound: {fileID: 8300000, guid: 3564cf90650d8b64ba364d502b701d86, type: 3}
   health: 100
   speed: 0.8
   value: 15

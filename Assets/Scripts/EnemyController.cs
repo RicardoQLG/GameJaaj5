@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 public class EnemyController : MonoBehaviour
 {
@@ -17,10 +17,15 @@ public class EnemyController : MonoBehaviour
   public Slider healthBar;
 
   [SerializeField] private float currentSpeed;
-  [SerializeField] public float currentHealth;
+  public float currentHealth;
+  public AudioSource audioSource;
+
+  [SerializeField] private Animator animator;
 
   private void Awake()
   {
+    animator = GetComponent<Animator>();
+    audioSource = GetComponent<AudioSource>();
     MoveToFloor(0);
   }
 
@@ -29,7 +34,7 @@ public class EnemyController : MonoBehaviour
 
   private void Start()
   {
-    GetComponent<SpriteRenderer>().sprite = enemyData.sprite;
+    GetComponent<Animator>().runtimeAnimatorController = enemyData.animation;
     currentSpeed = enemyData.speed;
     currentHealth = enemyData.health;
   }
@@ -66,6 +71,7 @@ public class EnemyController : MonoBehaviour
   private void FixedUpdate()
   {
     if (currentWaypointIndex == waypoints.Count) MoveToNextFloor();
+    animator.SetInteger("Direction", GetDirection(waypoints[currentWaypointIndex].transform.position));
 
     Vector3 currentWaypointPosition = waypoints[currentWaypointIndex].transform.position;
 
@@ -84,6 +90,16 @@ public class EnemyController : MonoBehaviour
     transform.position += directionNormalized * Time.deltaTime * currentSpeed;
   }
 
+  private int GetDirection(Vector3 nextWaypoint)
+  {
+    Vector3 direction = (nextWaypoint - transform.position).normalized;
+    if (direction.x > 0 && direction.y > 0) return 0;
+    if (direction.x > 0 && direction.y < 0) return 1;
+    if (direction.x < 0 && direction.y < 0) return 2;
+
+    return 3;
+  }
+
   public void TakeDamage(float amount)
   {
     currentHealth -= amount;
@@ -97,5 +113,12 @@ public class EnemyController : MonoBehaviour
       Destroy(gameObject);
       return;
     }
+  }
+
+  public void PlayStep()
+  {
+    audioSource.volume = .05f;
+    audioSource.clip = enemyData.stepSound;
+    audioSource.Play();
   }
 }
