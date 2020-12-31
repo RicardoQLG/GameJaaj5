@@ -12,7 +12,14 @@ public class TowerObject : ScriptableObject
 [Serializable]
 public class Tower
 {
+  [Header("Text")]
+  public string name;
+  [TextArea(10, 10)]
+  public string description;
+  [Header("Images")]
   public Sprite sprite;
+  public GameObject projectile;
+  [Header("Attributes")]
   public float speed;
   public float damage;
   public float range;

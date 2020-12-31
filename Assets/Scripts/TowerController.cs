@@ -44,7 +44,6 @@ public class TowerController : MonoBehaviour
   private void UpdateTower()
   {
     GetComponent<SpriteRenderer>().sprite = tower.levels[currentLevel].sprite;
-    // GetComponent<CircleCollider2D>().radius = tower.levels[currentLevel].range;
     float range = tower.levels[currentLevel].range;
 
     PolygonCollider2D polygon = GetComponent<PolygonCollider2D>();
@@ -68,7 +67,11 @@ public class TowerController : MonoBehaviour
     {
       targets.Add(other.transform);
       other.transform.GetComponent<EnemyController>().OnDie.AddListener(RemoveTarget);
-      if (!shooting) StartCoroutine(shootCoroutine);
+      if (!shooting)
+      {
+        shooting = true;
+        StartCoroutine(shootCoroutine);
+      }
     }
   }
 
@@ -85,20 +88,21 @@ public class TowerController : MonoBehaviour
 
   private IEnumerator Shoot()
   {
-    shooting = true;
     while (true)
     {
       if (targets.Count > 0)
       {
-        targets[0].GetComponent<EnemyController>().TakeDamage(tower.levels[currentLevel].damage);
+        GameObject projectile = Instantiate(tower.levels[currentLevel].projectile, transform.position, Quaternion.identity);
+        ProjectileController projectileData = projectile.GetComponent<ProjectileController>();
+        projectileData.SetTower(this);
+        projectileData.damage = tower.levels[currentLevel].damage;
       }
-      yield return new WaitForSeconds(tower.levels[currentLevel].speed);
-
-      if (targets.Count == 0)
+      else
       {
         StopCoroutine(shootCoroutine);
         shooting = false;
       }
+      yield return new WaitForSeconds(tower.levels[currentLevel].speed);
     }
   }
 
@@ -111,4 +115,5 @@ public class TowerController : MonoBehaviour
   {
     GetComponent<LineRenderer>().enabled = false;
   }
+
 }

@@ -50,3 +50,6 @@ TagManager:
   - name: Mouse
     uniqueID: 990181631
     locked: 0
+  - name: Projectiles
+    uniqueID: 3642879967
+    locked: 0
