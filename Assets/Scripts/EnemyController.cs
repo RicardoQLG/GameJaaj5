@@ -15,11 +15,11 @@ public class EnemyController : MonoBehaviour
   public UnityEvent<Transform> OnDie = new UnityEvent<Transform>();
   public TextMeshProUGUI nameField;
   public Slider healthBar;
-
   [SerializeField] private float currentSpeed;
   public float currentHealth;
   public AudioSource audioSource;
-
+  public ParticleSystem dieEffect;
+  public bool walking = true;
   [SerializeField] private Animator animator;
 
   private void Awake()
@@ -70,6 +70,10 @@ public class EnemyController : MonoBehaviour
 
   private void FixedUpdate()
   {
+    if (!walking)
+    {
+      return;
+    }
     if (currentWaypointIndex == waypoints.Count) MoveToNextFloor();
     animator.SetInteger("Direction", GetDirection(waypoints[currentWaypointIndex].transform.position));
 
@@ -109,10 +113,22 @@ public class EnemyController : MonoBehaviour
     if (currentHealth <= 0f)
     {
       OnDie.Invoke(transform);
+      StartCoroutine(Die());
       GameManager.instance.AddFunds(enemyData.value);
-      Destroy(gameObject);
       return;
     }
+  }
+
+  private IEnumerator Die()
+  {
+    walking = false;
+    healthBar.gameObject.SetActive(false);
+    nameField.gameObject.SetActive(false);
+    animator.runtimeAnimatorController = null;
+    audioSource.Stop();
+    dieEffect.Play();
+    yield return new WaitForSeconds(2f);
+    Destroy(gameObject);
   }
 
   public void PlayStep()

@@ -32,7 +32,6 @@ public class ProjectileController : MonoBehaviour
     if (tower.targets.Count > 0)
     {
       target = tower.targets[0];
-      Debug.Break();
       return;
     }
 

@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Trail
+    uniqueID: 1454121345
+    locked: 0
   - name: Mobs
     uniqueID: 3105044239
     locked: 0
