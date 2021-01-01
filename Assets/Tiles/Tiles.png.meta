@@ -101,6 +101,9 @@ TextureImporter:
   - first:
       213: 887565136908663245
     second: Fifa Step 2 1
+  - first:
+      213: 5891617607487913053
+    second: Tiles_33
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -900,6 +903,27 @@ TextureImporter:
       bones: []
       spriteID: dc9367c1ac3415c00800000000000000
       internalID: 887565136908663245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5cf0c6bffa33c150800000000000000
+      internalID: 5891617607487913053
       vertices: []
       indices: 
       edges: []

@@ -13,6 +13,7 @@ public class TowerController : MonoBehaviour
   int segments = 32;
   float angle;
   private IEnumerator shootCoroutine;
+  public SpriteRenderer spriteRenderer;
 
   private void Start()
   {
@@ -43,7 +44,7 @@ public class TowerController : MonoBehaviour
 
   private void UpdateTower()
   {
-    GetComponent<SpriteRenderer>().sprite = tower.levels[currentLevel].sprite;
+    spriteRenderer.sprite = tower.levels[currentLevel].sprite;
     float range = tower.levels[currentLevel].range;
 
     PolygonCollider2D polygon = GetComponent<PolygonCollider2D>();
