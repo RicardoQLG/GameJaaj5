@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 4b350d7b88f48134588cf73b80de663a
+guid: 62d36a8c079463648a43ed28ef404ca7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1791877894482765177
-    second: Headset_0
+      213: -1394656433649603305
+    second: Webcam_0
   - first:
-      213: 2195288513832264521
-    second: Headset_1
+      213: 7565544404468994898
+    second: Webcam_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -38,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -119,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Headset_0
+      name: Webcam_0
       rect:
         serializedVersion: 2
         x: 0
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78ada7a7c88f127e0800000000000000
-      internalID: -1791877894482765177
+      spriteID: 71d2a90ec5f25ace0800000000000000
+      internalID: -1394656433649603305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Headset_1
+      name: Webcam_1
       rect:
         serializedVersion: 2
         x: 64
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 943a77ea54b377e10800000000000000
-      internalID: 2195288513832264521
+      spriteID: 25391d84d863ef860800000000000000
+      internalID: 7565544404468994898
       vertices: []
       indices: 
       edges: []

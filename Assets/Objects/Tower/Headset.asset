@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buyValue: 1
   levels:
-  - name: GX - 3*(2^10)-9*8
+  - name: GX - 3*2^10-9*8
     description: "O melhor headset para quem est\xE1 iniciando na strema"
     sprite: {fileID: -1791877894482765177, guid: 4b350d7b88f48134588cf73b80de663a, type: 3}
     projectile: {fileID: 5861743409218684093, guid: ad864b099dc380a45b9231652c297645, type: 3}
