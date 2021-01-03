@@ -16,6 +16,7 @@ public class NameManager : MonoBehaviour
 {
   public TMP_Dropdown platformSelector;
   public static NameManager instance;
+  public GameObject noChatCanvas;
   public List<string> allNames;
   public List<string> uniqueNames;
 
@@ -35,6 +36,12 @@ public class NameManager : MonoBehaviour
   {
     string channelName = channelNameField.text.Trim((char)8203).ToLower();
     var selectedIndex = platformSelector.value;
+
+    if (channelName.Length < 3)
+    {
+      noChatCanvas.SetActive(true);
+      return;
+    }
 
     switch (selectedIndex)
     {
@@ -62,7 +69,14 @@ public class NameManager : MonoBehaviour
         TwitchData twitchChatters = new TwitchData();
         JsonUtility.FromJsonOverwrite(www.downloadHandler.text, twitchChatters);
         allNames = twitchChatters.GetAsList();
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        if (allNames.Count == 0)
+        {
+          noChatCanvas.SetActive(true);
+        }
+        else
+        {
+          SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        }
       }
     }
   }
