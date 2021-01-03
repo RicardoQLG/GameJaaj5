@@ -59,6 +59,7 @@ public class WaveManager : MonoBehaviour
     if (currentWaveIndex >= waves.Count)
     {
       OnLastWaveEnd.Invoke();
+      GameManager.instance.WinGame();
     }
   }
 }

@@ -57,7 +57,8 @@ public class EnemyController : MonoBehaviour
 
     if (currentFloorIndex > WaveManager.instance.floor.Count)
     {
-      Debug.Log("saindo aqui!");
+      GameManager.instance.ReduceLife(1f);
+      Destroy(gameObject);
     }
 
     MoveToFloor(currentFloorIndex);

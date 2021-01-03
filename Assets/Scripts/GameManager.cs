@@ -1,6 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,12 +12,17 @@ public class GameManager : MonoBehaviour
   public GameObject carrying;
   public TowerController selectedTower;
   public LayerMask towerLayer;
+  public float lifes = 10f;
+  public GameObject winCanvas;
+  public GameObject defeatCanvas;
+  public List<Image> lifeDisplay;
 
   private void Awake()
   {
     if (instance == null) instance = this;
     if (instance != this) DestroyImmediate(gameObject);
 
+    Application.runInBackground = true;
     UpdateFundCanvas();
   }
 
@@ -24,6 +31,18 @@ public class GameManager : MonoBehaviour
     Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
     RaycastHit2D hit = Physics2D.Raycast(new Vector2(mouseRay.origin.x, mouseRay.origin.y), Camera.main.transform.forward, 50f, towerLayer);
     RaycastHit2D[] hitAll = Physics2D.RaycastAll(new Vector2(mouseRay.origin.x, mouseRay.origin.y), Camera.main.transform.forward, 50f, towerLayer);
+
+    for (int i = 0; i < lifeDisplay.Count; i++)
+    {
+      if (i < lifes)
+      {
+        lifeDisplay[i].color = Color.white;
+      }
+      else
+      {
+        lifeDisplay[i].color = Color.black;
+      }
+    }
 
     if (Input.GetButtonDown("Fire1"))
     {
@@ -71,5 +90,25 @@ public class GameManager : MonoBehaviour
   {
     currentFunds -= amount;
     UpdateFundCanvas();
+  }
+
+  public void ReloadScene()
+  {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+  }
+
+  public void ReduceLife(float amount)
+  {
+    lifes -= amount;
+
+    if (lifes <= 0)
+    {
+      defeatCanvas.SetActive(true);
+    }
+  }
+
+  public void WinGame()
+  {
+    winCanvas.SetActive(true);
   }
 }

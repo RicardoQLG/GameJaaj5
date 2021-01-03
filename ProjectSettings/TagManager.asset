@@ -56,3 +56,6 @@ TagManager:
   - name: Projectiles
     uniqueID: 3642879967
     locked: 0
+  - name: End Game
+    uniqueID: 1281795771
+    locked: 0
