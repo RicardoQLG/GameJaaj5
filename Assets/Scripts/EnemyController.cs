@@ -47,6 +47,7 @@ public class EnemyController : MonoBehaviour
 
   private void MoveToFloor(int floorIndex)
   {
+    if (floorIndex >= WaveManager.instance.floor.Count) return;
     waypoints = WaveManager.instance.floor[floorIndex].waypoints;
     MoveToFirstWaypoint();
   }
@@ -76,6 +77,7 @@ public class EnemyController : MonoBehaviour
       return;
     }
     if (currentWaypointIndex == waypoints.Count) MoveToNextFloor();
+    if (currentWaypointIndex >= waypoints.Count) return;
     animator.SetInteger("Direction", GetDirection(waypoints[currentWaypointIndex].transform.position));
 
     Vector3 currentWaypointPosition = waypoints[currentWaypointIndex].transform.position;
