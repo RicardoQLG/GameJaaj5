@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class GameManager : MonoBehaviour
   public GameObject winCanvas;
   public GameObject defeatCanvas;
   public List<Image> lifeDisplay;
+  public UpdateController updateTowerPanel;
+  public bool targetUpgrade = false;
 
   private void Awake()
   {
@@ -44,12 +48,21 @@ public class GameManager : MonoBehaviour
       }
     }
 
+
     if (Input.GetButtonDown("Fire1"))
     {
+      GameObject tried = UIHitBox();
+
+      if (tried != null && tried.layer == 12)
+      {
+        return;
+      }
+
       if (selectedTower != null)
       {
         selectedTower.OnDeselect();
         selectedTower = null;
+        updateTowerPanel.SetTower(null);
       }
 
       foreach (var singleHit in hitAll)
@@ -58,13 +71,27 @@ public class GameManager : MonoBehaviour
         {
           selectedTower = singleHit.transform.GetComponent<TowerController>();
           selectedTower.OnSelect();
+          updateTowerPanel.SetTower(selectedTower);
           break;
         }
       }
     }
   }
 
-  private bool HasFunds(float amout)
+  private GameObject UIHitBox()
+  {
+    PointerEventData ped = new PointerEventData(EventSystem.current);
+    ped.position = Input.mousePosition;
+
+    List<RaycastResult> raycastResults = new List<RaycastResult>();
+    EventSystem.current.RaycastAll(ped, raycastResults);
+
+    if (raycastResults.Count == 0) return null;
+
+    return raycastResults[0].gameObject;
+  }
+
+  public bool HasFunds(float amout)
   {
     return amout <= currentFunds;
   }

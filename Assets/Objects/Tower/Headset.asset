@@ -12,19 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb87186f226a50646a7eefc447dc2404, type: 3}
   m_Name: Headset
   m_EditorClassIdentifier: 
-  buyValue: 1
+  buyValue: 50
   levels:
   - name: GX - 3*2^10-9*8
-    description: "O melhor headset para quem est\xE1 iniciando na strema"
+    description: "O melhor headset para quem est\xE1 iniciando no mundo das streams"
     sprite: {fileID: -1791877894482765177, guid: 4b350d7b88f48134588cf73b80de663a, type: 3}
     projectile: {fileID: 5861743409218684093, guid: ad864b099dc380a45b9231652c297645, type: 3}
     speed: 1.5
     damage: 10
     range: 2
-  - name: 
+    upgradeValue: 0
+  - name: Bote 8081
     description: 
-    sprite: {fileID: -1791877894482765177, guid: 4b350d7b88f48134588cf73b80de663a, type: 3}
+    sprite: {fileID: -3868313758472376782, guid: 4b350d7b88f48134588cf73b80de663a, type: 3}
     projectile: {fileID: 5861743409218684093, guid: ad864b099dc380a45b9231652c297645, type: 3}
-    speed: 1.5
-    damage: 10
-    range: 2
+    speed: 3
+    damage: 20
+    range: 4
+    upgradeValue: 50
+  - name: Super A
+    description: 
+    sprite: {fileID: -4502809768371657586, guid: 4b350d7b88f48134588cf73b80de663a, type: 3}
+    projectile: {fileID: 5861743409218684093, guid: ad864b099dc380a45b9231652c297645, type: 3}
+    speed: 6
+    damage: 40
+    range: 8
+    upgradeValue: 100

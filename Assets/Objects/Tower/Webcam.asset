@@ -21,3 +21,21 @@ MonoBehaviour:
     speed: 2
     damage: 25
     range: 1
+    upgradeValue: 0
+  - name: "Z\xF3io 2000"
+    description: A melhor web cam para Streamers de ponta
+    sprite: {fileID: -453813790111432788, guid: 62d36a8c079463648a43ed28ef404ca7, type: 3}
+    projectile: {fileID: 4052616599543107372, guid: 2947339e1eb211943b20246f0d623f82, type: 3}
+    speed: 4
+    damage: 50
+    range: 2
+    upgradeValue: 100
+  - name: DLC 1337
+    description: "Cam\xEAra gravadora profissional que pode ser usada como webcam
+      4k"
+    sprite: {fileID: -2177022878534581848, guid: 62d36a8c079463648a43ed28ef404ca7, type: 3}
+    projectile: {fileID: 4052616599543107372, guid: 2947339e1eb211943b20246f0d623f82, type: 3}
+    speed: 8
+    damage: 100
+    range: 4
+    upgradeValue: 200

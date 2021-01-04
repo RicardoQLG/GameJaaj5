@@ -16,4 +16,4 @@ MonoBehaviour:
   stepSound: {fileID: 8300000, guid: 3564cf90650d8b64ba364d502b701d86, type: 3}
   health: 100
   speed: 0.8
-  value: 15
+  value: 10

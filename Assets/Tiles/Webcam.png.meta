@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: 7565544404468994898
     second: Webcam_1
+  - first:
+      213: -453813790111432788
+    second: "Z\xF3io_2000"
+  - first:
+      213: -2177022878534581848
+    second: DLC_2526
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -156,6 +162,48 @@ TextureImporter:
       bones: []
       spriteID: 25391d84d863ef860800000000000000
       internalID: 7565544404468994898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Z\xF3io_2000"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caffb3623cab3b9f0800000000000000
+      internalID: -453813790111432788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DLC_2526
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a14c01f939a9c1e0800000000000000
+      internalID: -2177022878534581848
       vertices: []
       indices: 
       edges: []

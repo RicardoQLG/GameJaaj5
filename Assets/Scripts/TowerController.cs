@@ -7,7 +7,7 @@ public class TowerController : MonoBehaviour
 {
   public TowerObject tower;
   public List<Transform> targets;
-  public int currentLevel = 0;
+  public int currentLevel;
   public bool shooting = false;
   public GameObject place;
   int segments = 32;
@@ -21,19 +21,6 @@ public class TowerController : MonoBehaviour
     angle = 360 / segments;
     UpdateTower();
     OnDeselect();
-    float range = tower.levels[currentLevel].range;
-
-    LineRenderer line = GetComponent<LineRenderer>();
-    line.positionCount = segments + 1;
-    line.useWorldSpace = false;
-
-    for (int segment = 0; segment < line.positionCount; segment++)
-    {
-      float x = Mathf.Sin(Mathf.Deg2Rad * angle * segment) * range;
-      float y = Mathf.Cos(Mathf.Deg2Rad * angle * segment) * range * 0.5f;
-
-      line.SetPosition(segment, new Vector3(x, y, 0));
-    }
   }
 
   public void Upgrade()
@@ -60,6 +47,18 @@ public class TowerController : MonoBehaviour
     }
 
     polygon.SetPath(0, points);
+
+    LineRenderer line = GetComponent<LineRenderer>();
+    line.positionCount = segments + 1;
+    line.useWorldSpace = false;
+
+    for (int segment = 0; segment < line.positionCount; segment++)
+    {
+      float x = Mathf.Sin(Mathf.Deg2Rad * angle * segment) * range;
+      float y = Mathf.Cos(Mathf.Deg2Rad * angle * segment) * range * 0.5f;
+
+      line.SetPosition(segment, new Vector3(x, y, 0));
+    }
   }
 
   private void OnTriggerEnter2D(Collider2D other)
@@ -103,7 +102,7 @@ public class TowerController : MonoBehaviour
         StopCoroutine(shootCoroutine);
         shooting = false;
       }
-      yield return new WaitForSeconds(tower.levels[currentLevel].speed);
+      yield return new WaitForSeconds(10 / tower.levels[currentLevel].speed);
     }
   }
 

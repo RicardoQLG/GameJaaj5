@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: 2195288513832264521
     second: Headset_1
+  - first:
+      213: -3868313758472376782
+    second: Bote 8081
+  - first:
+      213: -4502809768371657586
+    second: Supimpa A
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -156,6 +162,48 @@ TextureImporter:
       bones: []
       spriteID: 943a77ea54b377e10800000000000000
       internalID: 2195288513832264521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bote 8081
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e6f72c12df05ac0800000000000000
+      internalID: -3868313758472376782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Supimpa A
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e846c016f5ec281c0800000000000000
+      internalID: -4502809768371657586
       vertices: []
       indices: 
       edges: []

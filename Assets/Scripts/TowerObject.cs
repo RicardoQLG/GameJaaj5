@@ -23,4 +23,5 @@ public class Tower
   public float speed;
   public float damage;
   public float range;
+  public float upgradeValue;
 }
