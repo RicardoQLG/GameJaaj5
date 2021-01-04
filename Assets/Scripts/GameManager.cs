@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
   public List<Image> lifeDisplay;
   public UpdateController updateTowerPanel;
   public bool targetUpgrade = false;
+  public bool defeated = false;
 
   private void Awake()
   {
@@ -131,11 +132,12 @@ public class GameManager : MonoBehaviour
     if (lifes <= 0)
     {
       defeatCanvas.SetActive(true);
+      defeated = true;
     }
   }
 
   public void WinGame()
   {
-    winCanvas.SetActive(true);
+    if (!defeated) winCanvas.SetActive(true);
   }
 }
