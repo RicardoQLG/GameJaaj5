@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb87186f226a50646a7eefc447dc2404, type: 3}
   m_Name: Webcam
   m_EditorClassIdentifier: 
-  buyValue: 100
+  buyValue: 50
   levels:
   - name: Webcam bolinha
     description: Uma webcam velha
@@ -29,7 +29,7 @@ MonoBehaviour:
     speed: 4
     damage: 50
     range: 2
-    upgradeValue: 100
+    upgradeValue: 50
   - name: DLC 1337
     description: "Cam\xEAra gravadora profissional que pode ser usada como webcam
       4k"
@@ -38,4 +38,4 @@ MonoBehaviour:
     speed: 8
     damage: 100
     range: 4
-    upgradeValue: 200
+    upgradeValue: 100
