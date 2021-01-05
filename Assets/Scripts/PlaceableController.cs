@@ -81,7 +81,7 @@ public class PlaceableController : MonoBehaviour
     GameObject newTower = Instantiate(towerPrefab, targetPlace.position, Quaternion.identity);
     newTower.GetComponent<TowerController>().tower = tower;
     newTower.GetComponent<TowerController>().place = targetPlace.gameObject;
-    newTower.GetComponent<SpriteRenderer>().sortingOrder = order;
+    newTower.GetComponent<TowerController>().spriteRenderer.sortingOrder = order;
     GameManager.instance.RemoveFunds(tower.buyValue);
     targetPlace.gameObject.SetActive(false);
     rangeDisplay.enabled = false;
