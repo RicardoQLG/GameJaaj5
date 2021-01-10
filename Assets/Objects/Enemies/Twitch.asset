@@ -15,5 +15,5 @@ MonoBehaviour:
   animation: {fileID: 9100000, guid: cfe1faedf794e924997a298077bb4bba, type: 2}
   stepSound: {fileID: 8300000, guid: 3564cf90650d8b64ba364d502b701d86, type: 3}
   health: 100
-  speed: 1.1
+  speed: 1.2
   value: 5
