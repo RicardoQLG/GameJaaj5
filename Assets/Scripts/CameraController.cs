@@ -5,6 +5,7 @@ public class CameraController : MonoBehaviour
   public static CameraController instance;
   public int currentFloor = 0;
   public float transitionSpeed;
+  public int floorCount = -1;
   public bool animating
   {
     get { return Mathf.Abs(cameraDestionation - transform.position.y) > 0.1f; }
@@ -20,6 +21,8 @@ public class CameraController : MonoBehaviour
   {
     if (instance == null) instance = this;
     if (instance != this) Destroy(this);
+
+    floorCount = WaveManager.instance.floor.Count - 1;
   }
 
   public void Up()
@@ -31,7 +34,7 @@ public class CameraController : MonoBehaviour
 
   public void Down()
   {
-    if (currentFloor == -1) return;
+    if (currentFloor == -floorCount) return;
     if (animating) return;
     currentFloor--;
   }
